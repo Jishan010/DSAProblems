@@ -1,9 +1,12 @@
 package com.company.ds.Maths;
 
-public class FIndPrimeNumbers {
+import java.util.Arrays;
+
+public class FindPrimeNumbers {
 
     public static void main(String[] args) {
-        printAllThePrimeNumbers(30);
+        /*printAllThePrimeNumbers(10000);*/
+        primeSieveOfEratosthenes(10000);
     }
 
     /**
@@ -30,5 +33,27 @@ public class FIndPrimeNumbers {
         }
     }
 
+    /**
+     * Get prime numbers from given range using Sieve of Eratosthenes
+     * // ref video https://www.youtube.com/watch?v=nDPo9hsDNvU&t=2s&ab_channel=ApnaCollege
+     */
+    private static void primeSieveOfEratosthenes(int toNumbers) {
+        int[] array = new int[toNumbers+1];
+        //filling array with 1 values which defaults as number is prime
+        Arrays.fill(array,1);
+        for (int i = 2; i <= toNumbers; i++) {
+            if(array[i] != 0) {
+                for (int j = i * i; j <= toNumbers; j += i) {
+                    array[j] = 0;
+                }
+            }
+        }
 
+        //print the indexes of array which are prime that is 0 in it.
+        for(int i = 1 ; i < array.length ; i++)
+        {
+            if(array[i] == 1)
+                System.out.println("prime numbers :" +i);
+        }
+    }
 }
