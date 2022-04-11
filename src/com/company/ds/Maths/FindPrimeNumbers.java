@@ -43,7 +43,7 @@ public class FindPrimeNumbers {
         Arrays.fill(array,1);
         for (int i = 2; i <= toNumbers; i++) {
             if(array[i] != 0) {
-                for (int j = i * i; j <= toNumbers; j += i) {
+                for (int j = i * i; j <= toNumbers; j += i) { //j = j+i
                     array[j] = 0;
                 }
             }
