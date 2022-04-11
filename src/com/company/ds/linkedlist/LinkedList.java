@@ -53,6 +53,7 @@ public class LinkedList {
 
     /**
      * Function to insert in between two nodes of linked list
+     *
      * @param index given index against which user want to enter the new node
      * @param value int value for new node
      * @return Node [Node]
@@ -67,7 +68,15 @@ public class LinkedList {
         int i = 0;
         Node currentNode = head;
         while (currentNode != null) {
-            if(i == index-1){
+
+            //update the head
+            if (i == index && index == 0) {
+                newNode.nextNode = currentNode;
+                this.head = newNode;
+            }
+
+            //update the middle node
+            if (i == index - 1) {
                 newNode.nextNode = currentNode.nextNode;
                 currentNode.nextNode = newNode;
             }

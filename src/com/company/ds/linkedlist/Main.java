@@ -19,7 +19,9 @@ public class Main {
         linkedList.insert(2,5);
         linkedList.insert(5,40);
         linkedList.insert(5,100);
-
+        linkedList.insert(1,25);
+        linkedList.insert(0,77);
+        linkedList.insert(0,1);
         System.out.println(linkedList);
 
         System.out.println("Size of this Linked list is : " + linkedList.getLength());
