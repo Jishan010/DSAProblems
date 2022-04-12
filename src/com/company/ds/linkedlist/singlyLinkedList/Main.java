@@ -1,6 +1,5 @@
-package com.company.ds.linkedlist;
+package com.company.ds.linkedlist.singlyLinkedList;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -17,11 +16,11 @@ public class Main {
 
         //inserting in middle into given index
         linkedList.insert(2,5);
-        linkedList.insert(5,40);
         linkedList.insert(5,100);
-        linkedList.insert(1,25);
-        linkedList.insert(0,77);
-        linkedList.insert(0,1);
+        linkedList.remove(5);
+        linkedList.remove(2);
+        linkedList.remove(0);
+        linkedList.insert(200,200);
         System.out.println(linkedList);
 
         System.out.println("Size of this Linked list is : " + linkedList.getLength());

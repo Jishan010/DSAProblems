@@ -1,4 +1,4 @@
-package com.company.ds.linkedlist;
+package com.company.ds.linkedlist.singlyLinkedList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +53,7 @@ public class LinkedList {
 
     /**
      * Function to insert in between two nodes of linked list
-     *
+     * time complexity O(n)
      * @param index given index against which user want to enter the new node
      * @param value int value for new node
      * @return Node [Node]
@@ -73,18 +73,61 @@ public class LinkedList {
             if (i == index && index == 0) {
                 newNode.nextNode = currentNode;
                 this.head = newNode;
+                length++;
+                return newNode;
+            }
+
+            //if given index is greater than our list then apend it to end of the list
+            if(index >= getLength()){
+                append(value);
+                return newNode;
             }
 
             //update the middle node
             if (i == index - 1) {
                 newNode.nextNode = currentNode.nextNode;
                 currentNode.nextNode = newNode;
+                length++;
+                return newNode;
             }
             currentNode = currentNode.nextNode;
             i++;
         }
 
         return newNode;
+    }
+
+
+    /**
+     * Function to insert in between two nodes of linked list
+     *
+     * @param index given index against which user want to enter the new node
+     * @return Node [Node]
+     */
+    public Node remove(int index) {
+        int i = 0;
+        Node removedNode = null;
+        Node currentNode = head;
+        while (currentNode != null) {
+            //update the head
+            //update the head
+            if (i == index && index == 0) {
+                this.head = currentNode.nextNode;
+                length--;
+                return currentNode;
+            }
+
+            //update the middle node
+            if (i == index - 1) {
+                removedNode = currentNode.nextNode;
+                currentNode.nextNode = currentNode.nextNode.nextNode;
+                length--;
+                return removedNode;
+            }
+            currentNode = currentNode.nextNode;
+            i++;
+        }
+        return null;
     }
 
 
