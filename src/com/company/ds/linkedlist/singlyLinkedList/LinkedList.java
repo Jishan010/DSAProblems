@@ -54,6 +54,7 @@ public class LinkedList {
     /**
      * Function to insert in between two nodes of linked list
      * time complexity O(n)
+     *
      * @param index given index against which user want to enter the new node
      * @param value int value for new node
      * @return Node [Node]
@@ -68,7 +69,7 @@ public class LinkedList {
         Node currentNode = head;
 
         //update the head
-        if ( index == 0) {
+        if (index == 0) {
             newNode.nextNode = currentNode;
             this.head = newNode;
             length++;
@@ -77,7 +78,7 @@ public class LinkedList {
 
         int i = 0;
         //if given index is greater than our list then apend it to end of the list
-        if(index >= getLength()){
+        if (index >= getLength()) {
             append(value);
             return newNode;
         }
@@ -147,6 +148,20 @@ public class LinkedList {
         }
         return nodes;
     }
+
+    public void reverseLinkedList() {
+        Node firstNode = head;
+        Node secondNode = firstNode.nextNode;
+
+        while (secondNode != null){
+            Node temp = secondNode.nextNode;
+            secondNode.nextNode = firstNode;
+            firstNode = secondNode;
+            secondNode = temp;
+        }
+        this.head.nextNode = null;
+        this.head = firstNode;
+   }
 
     /**
      * Function to get size of linked list
