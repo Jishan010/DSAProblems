@@ -35,7 +35,6 @@ public class Main {
 
         linkedList.reverseLinkedList();
 
-      /*  linkedList.reverseLinkedList();
         System.out.println("After reverse------------");
         List<Node> newNodes = linkedList.printAllNode();
         for (Node data : newNodes) {
@@ -44,6 +43,6 @@ public class Main {
             } else {
                 System.out.println("Current Node data : " + data.data);
             }
-        }*/
+        }
     }
 }
