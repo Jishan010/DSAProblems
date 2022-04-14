@@ -1,12 +1,9 @@
 package com.company.ds.stack;
 
 public class StackLinkedList {
-
-    String top;
-    String bottom;
     int length;
-    Node head = null;
-
+    Node top;
+    Node bottom;
     StackLinkedList() {
         this.top = null;
         this.bottom = null;
@@ -15,33 +12,37 @@ public class StackLinkedList {
 
     public void push(String value) {
         if (length == 0) {
-            this.head = new Node(value);
+            this.top = new Node(value);
+            this.bottom = top;
         } else {
             Node newNode = new Node(value);
-            bottom = head.data;
-            newNode.nextNode = this.head;
-            this.head = newNode;
+            newNode.nextNode = this.top;
+            this.top = newNode;
+            this.bottom = newNode.nextNode;
         }
-        top = head.data;
-        length++;
+        this.length++;
     }
 
     public void pop() {
         if (length == 0) {
-            this.head = null;
+            this.top = null;
+            this.bottom = null;
         } else {
-            this.head = head.nextNode;
+            this.top = top.nextNode;
         }
-        top = head.data;
-        length--;
+        this.length--;
     }
 
-    public String peek(){
-        return top;
+    public Node peek(){
+        return this.top;
+    }
+
+    public Node getBottom(){
+        return this.bottom;
     }
 
     public int getLength(){
-        return length;
+        return this.length;
     }
 
 }

@@ -10,12 +10,17 @@ public class Main {
         stackLinkedList.push("Youtube");
         stackLinkedList.push("Instagram");
 
-        System.out.println(stackLinkedList.peek());
-        System.out.println(stackLinkedList.getLength());
+        System.out.println("Top :" + stackLinkedList.peek().data);
+        System.out.println("Length :" + stackLinkedList.getLength());
 
         stackLinkedList.pop();
-        System.out.println(stackLinkedList.peek());
-        System.out.println(stackLinkedList.getLength());
+        System.out.println("Top :" + stackLinkedList.peek().data);
+        System.out.println("Length :" + stackLinkedList.getLength());
+        stackLinkedList.pop();
+        System.out.println("Top :" + stackLinkedList.peek().data);
+        System.out.println("Length :" + stackLinkedList.getLength());
+
+        System.out.println("Bottom :" + stackLinkedList.getBottom().data);
     }
 
 }
