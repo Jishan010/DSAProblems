@@ -18,7 +18,6 @@ public class StackLinkedList {
             Node newNode = new Node(value);
             newNode.nextNode = this.top;
             this.top = newNode;
-            this.bottom = newNode.nextNode;
         }
         this.length++;
     }
