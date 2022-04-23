@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class SelectionSort {
 
     public static void main(String[] args) {
-        int[] numbers = {7, 5, 9, 6, 4, 8, 3, 2, 44, 678, 4, 33, 234, 89, 67, 39, 93, 100};
+        int[] numbers = {7, 5, 9, 6, 4, 8, 3, 2, 44, 678, 4, 33, 0, 234, 89, 67, 39, 93, 100};
         selectionSort(numbers);
         System.out.println(Arrays.toString(numbers));
     }
